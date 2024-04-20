@@ -21,7 +21,7 @@ Welcome to the Person Registry Web Application project! This endeavor showcases 
 ## Getting Started
 
 1. clone the respository
+   ```bash
    git clone https://github.com/your-username/person-registry.git
 
-```bash
 
