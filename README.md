@@ -24,10 +24,9 @@ Welcome to the Person Registry Web Application project! This endeavor showcases 
    ```bash
    git clone https://github.com/your-username/person-registry.git
 2.Activate Virtual Environment (optional):
-   ```bash
+  ```bash
   python3 -m venv venv
 source venv/bin/activate
-
 
 
 
