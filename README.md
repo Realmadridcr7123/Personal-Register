@@ -19,4 +19,9 @@ Welcome to the Person Registry Web Application project! This endeavor showcases 
 - Footer: Bottom section displaying contact or other relevant information.
   
 ## Getting Started
-**Clone the Repository**:
+
+1. clone the respository
+   git clone https://github.com/your-username/person-registry.git
+
+```bash
+
