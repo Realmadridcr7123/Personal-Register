@@ -25,8 +25,20 @@ Welcome to the Person Registry Web Application project! This endeavor showcases 
    git clone https://github.com/your-username/person-registry.git
 2.Activate Virtual Environment (optional):
   ```bash
-  python3 -m venv venv
-source venv/bin/activate
+    python3 -m venv venv
+ source venv/bin/activate
+````
+3.Install Dependencies
+```bash
+ pip install -r requirements.txt
+```
+4.Run the application
+```bash
+Run flask Access the ApplicationOpen a web browser and go to http://localhost:5000/ to view the website.
+
+
+ 
+
 
 
 
