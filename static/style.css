@@ -1,0 +1,344 @@
+/* Grundläggande reset för alla element */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Stilar för HTML och body elementen */
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+/* Stilar för hela body */
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  margin: 20px; /* Ger en generell marginal på 20px runt sidans innehåll */
+}
+
+/* Container med max bredd 1100px, centrerad */
+.container {
+  max-width: 1100px;
+  margin: auto; /* Centrerar containern horisontellt */
+  padding: 20px;
+  overflow: auto;
+}
+
+/* Stilar för header */
+.header {
+  background: rgba(1, 1, 55, 0.671); /* Bakgrundsfärg, justerad till en mörkblå ton */
+  color: #fff; /* Vit textfärg för kontrast */
+  padding-top: 20px; /* Justerad padding för att centrera innehållet vertikalt */
+  height: 70px; /* Höjd på header */
+  border-bottom: 3px solid blue; /* Blå bottenlinje */
+}
+
+/* Rubrikstil inuti header */
+header h1 {
+  text-align: center;
+  margin: 0;
+}
+
+/* Navbar */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Länkstilar för navigationslänkar */
+.navbar a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.navbar a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+/* Content wrapper */
+.content-wrap {
+  min-height: calc(100% - 80px); /* Justera detta värde baserat på footerns höjd */
+  padding-bottom: 40px; /* Halva footerns höjd */
+  position: relative;
+}
+
+/* Stilar för innehåll */
+.content {
+  margin-top: 90px; /* Justerad margin för att undvika att innehållet täcks av navbaren */
+  padding: 20px;
+}
+
+/* Footer */
+.site-footer {
+  background-color: #222; /* Mörk bakgrundsfärg */
+  color: white; /* Vit textfärg */
+  text-align: center; /* Centrerad text */
+  padding: 20px 0; /* Inre fyllnad */
+  position: fixed;
+  bottom: 0;
+  width: 100%; /* Full bredd */
+}
+
+.site-footer p {
+  margin: 0;
+  color: #999;
+}
+
+/* Övriga stilar nedan */
+
+/* Stilar för listor */
+ul {
+  list-style: none;
+  background: #f4f4f4;
+  margin-top: 20px;
+}
+
+ul li {
+  padding: 15px;
+  border-bottom: 1px #ccc dotted;
+}
+
+ul li:last-child {
+  border-bottom: none;
+}
+
+ul li a {
+  text-decoration: none;
+  color: blue; /* Ändrad färg till blå */
+}
+
+/* Stilar för välkomsttext */
+.welcome-text h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.welcome-text p {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Bild av team */
+.team-image {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.team-image img {
+  border-radius: 50%;
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+}
+
+/* Infoboxar */
+.info-boxes {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.info-box {
+  width: 30%;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.info-box h2 {
+  margin-bottom: 15px;
+}
+
+.info-box p {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Formulär */
+.form-group {
+  margin: 20px 0;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+.form-control:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.form-label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* Knappstilar */
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+/* Tabellstilar */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table td,
+.table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* Stilar för tabellrubrik */
+.table-header {
+  font-size: 24px;
+  margin: 20px 0;
+}
+
+/* Sökbox */
+@media screen and (max-width: 600px) {
+  .table,
+  .form-control {
+    width: 100%;
+  }
+}
+
+.search-box {
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  width: 50%;
+  padding: 15px;
+  font-size: 18px;
+  margin: 5px 0;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search-button {
+  width: auto;
+  max-width: 200px;
+  padding: 8px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.search-button:hover {
+  background-color: #45a049;
+}
+
+/* Paginering */
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.page-link {
+  padding: 10px 15px;
+  margin: 0 5px;
+  border: 1px solid #ddd;
+  color: #333;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.page-link:hover {
+  background-color: #f2f2f2;
+}
+
+.page-link.active {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+}
+
+/* Globala länkstilar */
+a {
+  text-decoration: none;
+}
+
+/* Stilar för person-container */
+.person-container {
+  display: flex;
+  align-items: center;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+/* Bildstilar för person */
+.person-picture img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-right: 20px;
+  object-fit: cover;
+}
+
+/* Profiltextstilar för person */
+.person-profile {
+  flex: 1;
+}
+
+.person-profile h1 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.person-profile p {
+  margin-bottom: 5px;
+  line-height: 1.6;
+}
