@@ -32,8 +32,14 @@ Welcome to the Person Registry Web Application project! This endeavor showcases 
 ```bash
  pip install -r requirements.txt
 ```
-4.Run the application
+4.Create a .env file
 ```bash
+# Databses
+LOCAL_DATABASE_URI = "sqlite:///Database.db"
+
+5.Run the application
+```bash
+
   Run flask Access the Application Open a web browser and go to http://localhost:5000/ to view the website.
 ```
 
