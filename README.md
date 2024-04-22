@@ -37,6 +37,9 @@ Welcome to the Person Registry Web Application project! This endeavor showcases 
 # Databses
 LOCAL_DATABASE_URI = "sqlite:///Database.db"
 
+
+```
+
 5.Run the application
 ```bash
 
