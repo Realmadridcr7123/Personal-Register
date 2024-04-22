@@ -37,7 +37,7 @@ Welcome to the Person Registry Web Application project! This endeavor showcases 
   Run flask Access the Application Open a web browser and go to http://localhost:5000/ to view the website.
 ```
 
-## Contributor**s
+## Contributor
 [Min GitHub-repositorium](https://github.com/Realmadridcr7123)
 
 
