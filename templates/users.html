@@ -1,0 +1,139 @@
+{% extends "base.html"%} <!-- Utökar från basmallen (base.html) -->
+
+{% block content %}
+<!-- Block för innehåll på sidan -->
+
+{% with messages = get_flashed_messages() %}
+   {% if messages %}
+      {% for message in messages %}
+         {{ message }}
+      {% endfor %}
+   {% endif %}
+{% endwith %}
+
+<div class="container">
+   <!-- Container för innehållet, inklusive sökruta och tabell för användare -->
+
+   <form method="get">
+      <!-- Formulär för att söka användare -->
+      <div class="search-box">
+          <input type="text" name="q" placeholder="Search..." required value="{{q}}">
+          <!-- Input för sökning med aktuell sökterm (om det finns) -->
+          <button class="search-button" type="submit">Search</button>
+          <!-- Knapp för att starta sökning -->
+      </div>
+  </form>
+
+   <table class="table table-bordered">
+      <!-- Tabell för att visa användare -->
+
+      <thead class="table th">
+         <!-- Rubrik för tabellen -->
+         <tr>
+            <!-- Rad med kolumnrubriker -->
+            <td>Id
+               <!-- Kolumnrubrik för ID med länkar för sorteringspilar -->
+            </td>
+            <td>Name
+               <!-- Kolumnrubrik för namn med länkar för sorteringspilar -->
+            </td>
+            <td>Age
+               <!-- Kolumnrubrik för ålder med länkar för sorteringspilar -->
+            </td>
+            <td>Email
+               <!-- Kolumnrubrik för e-post med länkar för sorteringspilar -->
+            </td>
+            <td>Username
+               <!-- Kolumnrubrik för användarnamn med länkar för sorteringspilar -->
+            </td>
+            <td>Number
+               <!-- Kolumnrubrik för telefonnummer med länkar för sorteringspilar -->
+            </td>
+            <td>Country
+               <!-- Kolumnrubrik för land med länkar för sorteringspilar -->
+            </td>
+            <td>
+               View Profile
+               <!-- Rubrik för att visa profil -->
+            </td>
+         </tr>
+      </thead>
+
+      {% for user in list_of_users %}
+      <!-- Loop för att visa varje användare -->
+      <tr>
+         <!-- Rad för varje användare -->
+         <td>{{user.id}}</td>
+         <!-- Cell för ID -->
+         <td>{{user.name}}</td>
+         <!-- Cell för namn -->
+         <td>{{user.age}} </td>
+         <!-- Cell för ålder -->
+         <td>{{user.email}}</td>
+         <!-- Cell för e-post -->
+         <td>{{user.username}}</td>
+         <!-- Cell för användarnamn -->
+         <td>{{user.phone}}</td>
+         <!-- Cell för telefonnummer -->
+         <td>{{user.country}}</td>
+         <!-- Cell för land -->
+
+         <td><a href="{{url_for('user_page', user_id=user.id)}}"><i class='bx bxs-invader'></i></a></td>
+         <!-- Länk för att visa användarens profil -->
+      </tr>
+      {% endfor %}
+      <!-- Slut på loopen för användare -->
+   </table>
+
+   <nav aria-label="Page navigation example">
+      <!-- Navigering för sidor -->
+      <ul class="pagination">
+          {% if nr_pages !=1 %}    
+              {% if has_prev %}
+              <li class="page-item">
+                  <a class="page-link" href="{{url_for('all_users', sort_column = sort_column, sort_order = sort_order, q=q, page = page - 1)}}" aria-label="Föregående">
+                      <i class='bx bx-chevrons-left'></i>
+                  </a>
+              </li>
+              {% else %}
+              <li class="page-item disabled">
+                  <a class="page-link"><i class='bx bx-chevrons-left'></i></box-icon></a>
+              </li>
+              {% endif %}
+  
+              {% for page in pagination.iter_pages(left_edge=0, right_edge=0, left_current=2, right_current=2) %}
+                  {% if page %}
+                      {% if page != pagination.page %}
+                      <li class="page-item">
+                          <a class="page-link" href="{{url_for('all_users', sort_column = sort_column, sort_order = sort_order, q=q, page = page)}}">{{ page }}</a>
+                      </li>
+                          
+                      {% else %}
+                      <li class="page-item active">
+                          <a class="page-link"><strong>{{ page }}</strong></a>
+                      </li>
+                      {% endif %}
+                  {% endif %}
+              {% endfor %}
+              {% if has_next %}
+                  <li class="page-item">
+                      <a class="page-link" href="{{url_for('all_users', sort_column = sort_column, sort_order = sort_order, q=q, page = page + 1)}}">
+                          <i class='bx bx-chevrons-right'></i>
+                      </a>
+                  </li>
+              {% else %}
+                  <li class="page-item disabled">
+                      <a class="page-link"><i class='bx bx-chevrons-right'></i></a>
+                  </li>
+              {% endif %}
+          {% endif %}
+      </ul>
+      <!-- Slut på paginering -->
+      <p>Page {{page}} out of {{pages}}</p>
+      <!-- Visar aktuell sida av totala sidor -->
+   </nav>
+   <!-- Slut på navigering -->
+</div>
+<!-- Slut på container -->
+{% endblock %}
+<!-- Slut på block för innehåll -->

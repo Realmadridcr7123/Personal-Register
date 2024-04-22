@@ -1,0 +1,22 @@
+{% extends 'base.html' %} <!-- Utökar från basmallen (base.html) -->
+
+{% block content %}
+    <!-- Block för innehåll på sidan -->
+
+    <div class="person-container">
+        <!-- Container för personinformation -->
+        <div class="person-picture">
+            <img src="https://source.unsplash.com/featured/?people" alt="{{ user.name }}">
+            <!-- Bild med slumpmässig person från Unsplash, med namnet som alternativ text -->
+        </div>
+        <div class="person-profile">
+            <!-- Profilinformation för användaren -->
+            <h1>{{ user.name }}</h1> <!-- Visar användarens namn -->
+            <p><strong>Email:</strong> {{ user.email }}</p> <!-- Visar användarens e-postadress -->
+            <p><strong>Phone:</strong> {{ user.phone }}</p> <!-- Visar användarens telefonnummer -->
+            <p><strong>Age:</strong> {{ user.age }}</p> <!-- Visar användarens ålder -->
+            <p><strong>Country:</strong> {{ user.country}}</p> <!-- Visar användarens land -->
+            <p><strong>Username:</strong> {{ user.username}}</p> <!-- Visar användarens användarnamn -->
+        </div>
+    </div>
+{% endblock %}

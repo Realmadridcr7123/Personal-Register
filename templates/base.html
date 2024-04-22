@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>{%block title%}{%endblock%}</title> <!-- Dynamisk titel som kan fyllas i av barnmallar -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> <!-- Länk till extern CSS-fil -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> <!-- Länk till externa ikoner (boxicons) -->
+</head>
+<body>
+    <div class="content-wrap">
+        <div class="navbar">
+            <a href="/">Home</a> <!-- Länk till startsidan -->
+            <a href="{{url_for('register_new_user')}}">Register</a> <!-- Länk till registreringssidan -->
+            <a href="{{url_for('all_users', sort_order='asc', sort_column='id', q = q)}}">All Users</a> <!-- Länk till sidan för alla användare med dynamiska parametrar -->
+            <a href="{{url_for('goto_user')}}">Go To</a> <!-- Länk till sidan för att gå till en specifik användare -->
+        </div>
+        <div class="content">
+            {% block content %} <!-- Plats för dynamiskt innehåll definierat av barnmallar -->
+            {% endblock %}
+        </div>
+    </div>
+    <footer class="site-footer">
+        <p> © Skapad av Tekle 2024 </p> <!-- Copyright-meddelande med skaparens namn och år -->
+    </footer>    
+</body>
+</html>
